@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            Game Hub
+            <span class="subtitle">SPACE INVADERS</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="https://dumprichk.github.io/Game-Hub/">GAME HUB</a></li>
+        </ul>
+    </nav>
+
+    <main class="game-page">
+
+        <header class="game-header">
+            <p class="eyebrow">ARCADE • SHOOTER</p>
+            <h1>👾 SPACE INVADERS</h1>
+            <p>DEFEND THE PLANET</p>
+        </header>
+
+        <section class="stats">
+            <div class="stat">
+                <span>SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+            <div class="stat">
+                <span>HIGH SCORE</span>
+                <strong id="highScore">0</strong>
+            </div>
+            <div class="stat">
+                <span>WAVE</span>
+                <strong id="wave">1</strong>
+            </div>
+            <div class="stat">
+                <span>COINS</span>
+                <strong id="coins">0</strong>
+            </div>
+            <div class="stat">
+                <span>LIVES</span>
+                <strong id="lives">3</strong>
+            </div>
+        </section>
+
+        <section class="game-area">
+            <div id="gameWrapper">
+                <canvas id="game" width="800" height="600"></canvas>
+
+                <div id="overlay" class="overlay">
+                    <div class="overlay-box">
+                        <div id="overlayIcon">👾</div>
+                        <h2 id="overlayTitle">SPACE INVADERS</h2>
+                        <p id="overlayText">Move, shoot, and survive the invasion.</p>
+                        <button id="startButton">START GAME</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-row">
+                <button id="leftButton" class="control-button">◀</button>
+                <button id="fireButton" class="fire-button">FIRE</button>
+                <button id="rightButton" class="control-button">▶</button>
+            </div>
+
+            <p class="instructions">
+                Arrow Keys / A-D to move • Space to shoot • P to pause
+            </p>
+        </section>
+
+        <section class="buttons">
+            <button id="pauseButton">PAUSE</button>
+            <button id="shopButton">SHOP</button>
+            <button id="achievementButton">ACHIEVEMENTS</button>
+        </section>
+
+        <section id="shopPanel" class="panel hidden">
+            <div class="panel-heading">
+                <div>
+                    <p>UPGRADES</p>
+                    <h2>SHOP</h2>
+                </div>
+                <button class="closeButton" data-close="shopPanel">×</button>
+            </div>
+
+            <div class="shop-grid">
+                <article class="shop-item">
+                    <div class="item-icon">⚡</div>
+                    <div>
+                        <h3>Rapid Fire</h3>
+                        <p>Reduce your shot cooldown.</p>
+                        <span id="rapidFireLevel">Level 0</span>
+                    </div>
+                    <button id="rapidFireBuy">50 🪙</button>
+                </article>
+
+                <article class="shop-item">
+                    <div class="item-icon">🚀</div>
+                    <div>
+                        <h3>Engine Boost</h3>
+                        <p>Move your ship faster.</p>
+                        <span id="engineLevel">Level 0</span>
+                    </div>
+                    <button id="engineBuy">75 🪙</button>
+                </article>
+
+                <article class="shop-item">
+                    <div class="item-icon">💥</div>
+                    <div>
+                        <h3>Power Shot</h3>
+                        <p>Increase bullet damage.</p>
+                        <span id="powerLevel">Level 0</span>
+                    </div>
+                    <button id="powerBuy">100 🪙</button>
+                </article>
+
+                <article class="shop-item">
+                    <div class="item-icon">🛡️</div>
+                    <div>
+                        <h3>Extra Life</h3>
+                        <p>Start future runs with another life.</p>
+                        <span id="lifeLevel">Level 0</span>
+                    </div>
+                    <button id="lifeBuy">150 🪙</button>
+                </article>
+            </div>
+
+            <button id="resetProgress" class="danger-button">RESET SAVED PROGRESS</button>
+        </section>
+
+        <section id="achievementPanel" class="panel hidden">
+            <div class="panel-heading">
+                <div>
+                    <p>REWARDS</p>
+                    <h2>ACHIEVEMENTS</h2>
+                </div>
+                <button class="closeButton" data-close="achievementPanel">×</button>
+            </div>
+
+            <div id="achievementList" class="achievement-list"></div>
+        </section>
+
+    </main>
+
+    <div id="toast"></div>
+
+    <footer>
+        © 2026 Game Hub <span>•</span> Space Invaders
+    </footer>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>
