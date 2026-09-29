@@ -467,6 +467,12 @@ function update(dt) {
     player.x = Math.max(10, Math.min(W - player.width - 10, player.x));
 
     player.cooldown = Math.max(0, player.cooldown - dt);
+
+    // Keep firing while Space is held, even while the player is moving.
+    if (keys[" "]) {
+        shoot();
+    }
+
     player.invincible = Math.max(0, player.invincible - dt);
 
     enemyMoveTimer += dt * 1000;
